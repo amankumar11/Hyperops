@@ -4,7 +4,7 @@ import DetailsBox from './DetailsBox';
 
 const Booking = () => {
     return (
-        <div className="booking-section">
+        <div className="booking-section" id="booking">
             <div className="booking-box">
                 <DetailsBox/>
             </div>

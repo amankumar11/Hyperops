@@ -13,36 +13,45 @@ const DateTime = () => {
         }
     });
 
-    //8AM - 2AM
+    //5:30AM - 9:30PM
     var check = date.toLocaleTimeString('en-GB');
-    var statusStyle;
+    const ActiveStyle = {
+        backgroundColor: "green",
+        width: "70px",
+        borderRadius:"10px"
+    };
+    const NotActiveStyle = {
+        backgroundColor: "red",
+        width: "100px",
+        borderRadius:"10px"
+    };
+
     var[status,setStatus] = useState();
+    var[statusStyle,setstatusStyle] = useState(ActiveStyle);
     useEffect(()=>{
         if(check>'05:30:00' && check<'23:30:00'){
             setStatus('Active');
-            statusStyle = {
-                color: "green",
-                width: "200px"
-            }
+            
         }
         else{
             setStatus("Not Active");
-            statusStyle = {
-                color: 'red',
-                width: "200px"
-            }
+            setstatusStyle(NotActiveStyle);
+            
         }
-    })
-    
+    });
 
     return (
-        <div>
+        <div style={{
+            display:"flex",
+            flexDirection:"row"
+        }}>
             <p className="time">
                 Time: {date.toLocaleTimeString()}
             </p>
             <p style={statusStyle} className="status">
                 {status}
             </p>
+            
         </div>
     )
 }

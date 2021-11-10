@@ -1,6 +1,7 @@
 import React from 'react'
 import '../../assets/css/booking.css';
 import DateTime from './DateTime';
+import Schedule from './Schedule';
 
 const DetailsBox = () => {
     return (
@@ -20,6 +21,7 @@ const DetailsBox = () => {
                     <p>74 miles/ 119 km</p>
                 </div>
             </div>
+            <Schedule/>
         </div>
     )
 }

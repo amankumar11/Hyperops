@@ -64,3 +64,26 @@
     color: white;
 }
 
+.status{
+    margin-left: 20px;
+    padding-left: 10px;
+}
+
+.schedule{
+
+}
+
+.schedule-link{
+    color: white;
+    text-decoration: none;
+    background-color: white;
+    color: #391d57;
+    padding: 2px 10px;
+    border-radius: 10px;
+}
+
+.schedule-link:hover{
+    background-color: #8a789a;
+    color: white;
+}
+
