@@ -35,7 +35,8 @@
     width: 50%;
     /* margin-left: 80px; */
     /* margin-right: 80px; */
-    background-color: chocolate;
+    background-color: #2303423b;
+    border-radius: 20px;
     margin: 0px 20px;
 }
 
