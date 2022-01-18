@@ -39,7 +39,12 @@ function App() {
           <Route path="/login">
             <Login setloginuser={setloginuser}/>
           </Route>
-          <Route path="/register"><Register/></Route>
+          <Route path="/register">
+            <Register/>
+          </Route>
+          <Route path="/admin">
+            <AdminPage/>
+          </Route>
         </Switch>
       </Router>
       {/* <ClientPage/> */}

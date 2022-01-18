@@ -2,6 +2,8 @@ import React from 'react'
 import { useState } from 'react'
 import axios from "axios";
 import { useHistory } from 'react-router-dom';
+import '../../assets/css/loginRegister.css';
+import Logo from '../../assets/img/virginLogo.png';
 
 const Login = ({setloginuser}) => {
 
@@ -30,13 +32,28 @@ const Login = ({setloginuser}) => {
     }
 
     return (
-        <div>
-            {/* {console.log(user)} */}
-            <input type="text" name="email" value={user.email} placeholder='Enter your Email' onChange={ handleChange }></input>
-            <input type="password" name="password" value={user.password} placeholder='Enter your Password' onChange={ handleChange }></input>
-            <div className='button' onClick={login}>Login</div>
-            <div>or</div>
-            <div className='button' onClick={() => history.push("/register")}>Register</div>
+        <div className='loginPage'>
+            <div className='bootPageL'>
+                
+            </div>
+            <div className='bootPageR'>
+                <div className='loginform'>
+                    {/* {console.log(user)} */}
+                    <img src={Logo} width='200px'></img>
+                    <h1>BANDRA-KURLA PORTAL</h1>
+                    <input className="forminput" type="text" name="email" value={user.email} placeholder='Enter your Email' onChange={ handleChange }></input>
+                    <input class="forminput" type="password" name="password" value={user.password} placeholder='Enter your Password' onChange={ handleChange }></input>
+                    <button className="btn">
+                        <div className='button' onClick={login}>Login</div>
+                    </button>
+                    <div>or</div>
+                    <button className="btn">
+                        <div className='button' onClick={() => history.push("/register")}>Register</div>
+                    </button>
+                    
+                </div>
+            </div>
+            
         </div>
     )
 }

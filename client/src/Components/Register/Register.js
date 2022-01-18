@@ -2,6 +2,8 @@ import React from 'react'
 import { useState } from 'react'
 import axios from "axios";
 import { useHistory } from 'react-router-dom';
+import '../../assets/css/loginRegister.css';
+import Logo from '../../assets/img/virginLogo.png';
 
 const Register = () => {
 
@@ -38,15 +40,28 @@ const Register = () => {
     }
 
     return (
-        <div>
-            {/* {console.log(user)} */}
-            <input type="text" name="name" value={user.name} placeholder='Your Name' onChange={handleChange}></input>
-            <input type="text" name="email" value={user.email} placeholder='Your Email' onChange={handleChange}></input>
-            <input type="password" name="password" value={user.password} placeholder='Your Password' onChange={handleChange}></input>
-            <input type="password" name="reEnterPassword" value={user.reEnterPassword} placeholder='Re-enter Password' onChange={handleChange}></input>
-            <div className='button' onClick={register}>Register</div>
-            <div>or</div>
-            <div className='button' onClick={() => history.push("/login")}>Login</div>
+        <div className='registerPage'>
+            <div className='bootPageL'>
+
+            </div>
+            <div className='bootPageR'>
+                <div className='registerform'>
+                    <img src={Logo} width='200px'></img>
+                    <h1>BANDRA-KURLA PORTAL</h1>
+                    <input className="forminput" type="text" name="name" value={user.name} placeholder='Your Name' onChange={handleChange}></input>
+                    <input className="forminput" type="text" name="email" value={user.email} placeholder='Your Email' onChange={handleChange}></input>
+                    <input className="forminput" type="password" name="password" value={user.password} placeholder='Your Password' onChange={handleChange}></input>
+                    <input className="forminput" type="password" name="reEnterPassword" value={user.reEnterPassword} placeholder='Re-enter Password' onChange={handleChange}></input>
+                    <button className='btn'>
+                        <div className='button' onClick={register}>Register</div>
+                    </button>
+                    <div>or</div>
+                    <button className='btn'>
+                        <div className='button' onClick={() => history.push("/login")}>Login</div>
+                    </button>
+                    
+                </div>
+            </div>
         </div>
     )
 }

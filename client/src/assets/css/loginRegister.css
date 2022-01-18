@@ -1,0 +1,66 @@
+.loginPage, .registerPage{
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100%;
+}
+
+.bootPageR{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    height: 100%;
+}
+.bootPageL{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    height: 100%;
+    background-image: url('../img/landing.jpeg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* background-color: black; */
+}
+
+.loginform, .registerform{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #2303423a;
+    padding: 30px 30px;
+    border-radius: 10px;
+}
+
+.loginform h1{
+    font-size: 13px;
+}
+.registerform h1{
+    font-size: 13px;
+}
+
+.forminput{
+    margin: 10px 0px;
+    width: 500px;
+    height: 50px;
+    border: 2px solid rgba(0, 0, 0, 0.096);
+    border-radius: 10px;
+}
+
+.btn{
+    background-color: #230342e7;
+    color: white;
+}
+
+.btn:hover{
+    color: #230342e7;
+    background-color: #23034215;
+    border: 2px solid #230342e7;
+}
