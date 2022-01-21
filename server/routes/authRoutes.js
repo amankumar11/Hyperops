@@ -1,26 +1,9 @@
-const express = require("express");
-const cors = require("cors");
-const mongoose = require("mongoose");
-
-const app = express();
-app.use(express.json())
-app.use(express.urlencoded())
-app.use(cors())
-
-const dbURI = 'mongodb+srv://aman:test1234@nodetuts.98mkn.mongodb.net/node-tuts?retryWrites=true&w=majority'
-mongoose.connect(dbURI), {
-    useNewUrlParser: true,
-    useUnifiedTopology: true 
-}, () => {
-    console.log("DB connected")
-}
-
-// mongoose.connect(dbURI)
-//     .then((result) => app.listen(3000))
-//     .catch((err) => console.log(err));
-
 //Routes
-app.post("/login", (req,res)=>{
+const express = require('express')
+const User = require("../models/user")
+const router = new express.Router()
+
+router.post("/login", (req,res)=>{
     const {email, password} = req.body
     User.findOne({email: email}, (err, user) => {
         if(user){
@@ -36,7 +19,7 @@ app.post("/login", (req,res)=>{
         }
     })
 })
-app.post("/register", (req,res)=>{
+router.post("/register", (req,res)=>{
     const {name, email, password} = req.body
     User.findOne({email: email}, (err, user) => {
         if(user){
@@ -60,16 +43,4 @@ app.post("/register", (req,res)=>{
     
 })
 
-app.listen(5000,()=>{
-    console.log("server started at port 5000")
-})
-
-//user schema
-const userSchema = mongoose.Schema({
-    name: String,
-    email: String,
-    password: String
-})
-
-//Model
-const User = new mongoose.model("User", userSchema)
+module.exports = router
