@@ -22,7 +22,7 @@ const AdminDetails = () => {
                     <p>pod num</p>
                 </div>
                 <div className="distance">
-                    Reaching Mumbai in
+                    Reaching Pune in
                     <p>n minutes</p>
                 </div>
             </div>

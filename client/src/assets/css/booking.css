@@ -87,3 +87,43 @@
     color: white;
 }
 
+.bookh1{
+    margin-top: 50px;
+    color: white;
+    font-family: 'IBM Plex Sans', sans-serif;
+}
+
+.booknowspace{
+    display: flex;
+    flex-direction: column;
+}
+
+.userform{
+    display: flex;
+    flex-direction: row;
+}
+
+.userform select{
+    margin: 10px 20px;
+    width: 350px;
+    height: 40px;
+}
+
+.bookbtn{
+    width: 20%;
+    height: 50px;
+    border-radius: 10px;
+    margin-left: 20px;
+    margin-top: 10px;
+    color: #8a789a;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.bookbtn:hover{
+    color: white;
+    background-color: #8a789a;
+
+}
+

@@ -16,6 +16,7 @@ import AdminPage from './Pages/AdminPage';
 import Login from './Components/Login/Login';
 import Register from './Components/Register/Register';
 import { useState } from 'react';
+import ScheduleTable from './Components/ScheduleSection/ScheduleTable';
 
 
 function App() {
@@ -33,7 +34,6 @@ function App() {
               <ClientPage/>
               :
               <Login setloginuser={setloginuser}/>
-
             }
           </Route>
           <Route path="/login">
@@ -44,6 +44,12 @@ function App() {
           </Route>
           <Route path="/admin">
             <AdminPage/>
+          </Route>
+          <Route path="/check">
+            <ClientPage/>
+          </Route>
+          <Route path="/m1">
+            <ScheduleTable/>
           </Route>
         </Switch>
       </Router>
