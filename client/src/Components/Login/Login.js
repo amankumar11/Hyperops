@@ -1,5 +1,5 @@
 import React from 'react'
-import { useState } from 'react'
+import { useState , useEffect } from 'react'
 import axios from "axios";
 import { Redirect, useHistory } from 'react-router-dom';
 import '../../assets/css/loginRegister.css';
@@ -56,6 +56,43 @@ const Login = ({}) => {
                       })
     }
 
+
+    const fetchProfile = () =>{
+
+        fetch(`http://localhost:5000/users/me/`,{
+            method:"GET",
+            headers: {
+              'Accept': 'application/json',
+              'Content-Type': 'application/json',
+              'Cache': 'no-cache'
+            },
+            credentials: 'include'
+          })
+          .then(async response => {
+              if(response.ok){
+                  
+                  response.json().then(data => {
+                  
+                    if(data.name !== undefined)
+                    {
+                       
+                        setLoggedIn(<Redirect to="/client"></Redirect>);
+                    }
+                  });
+               }
+              else{
+                  throw response.json();
+              }
+            })
+            .catch(async (error) => {
+              const errorMessage = await error;
+                console.log(errorMessage);
+            })
+    }
+
+    useEffect(( () => {
+        fetchProfile();
+    }),[])
    
     return (
         <div className='loginPage'>
