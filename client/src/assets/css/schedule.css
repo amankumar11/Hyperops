@@ -3,7 +3,7 @@
 
 .schedule-section{
     width: 100%;
-    height: 80vh;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     /* justify-content: center; */
@@ -20,6 +20,7 @@
     color: white;
     height: fit-content;
     width: 100%;
+    margin-top: 50px;
 }
 
 .schedule-details{
@@ -32,7 +33,7 @@
 .table-div{
     /* display: flex; */
     /* justify-content: center; */
-    width: 50%;
+    width: 100%;
     height: 80vh;
     /* margin-left: 80px; */
     /* margin-right: 80px; */
@@ -43,7 +44,17 @@
 }
 
 .table{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     margin: 10px 0px;
+}
+
+.table embed{
+    width: 95%;
+    height: 75vh;
+    
 }
 
 .train-details{
@@ -73,6 +84,11 @@
     height: 40px;
     border: 1px solid black;
     border-radius: 10px;
+}
+
+a{
+    text-decoration: none;
+    color: black;
 }
 
 .city-buttons{
