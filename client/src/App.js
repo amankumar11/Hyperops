@@ -15,7 +15,6 @@ import ClientPage from './Pages/ClientPage';
 import AdminPage from './Pages/AdminPage';
 import Login from './Components/Login/Login';
 import Register from './Components/Register/Register';
-import { useState } from 'react';
 import ScheduleTable from './Components/ScheduleSection/ScheduleTable';
 
 

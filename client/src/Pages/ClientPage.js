@@ -9,6 +9,10 @@ import { Redirect } from 'react-router-dom';
 const ClientPage = () => {
 
     const [loggedIn,setLoggedIn] = useState(null);
+    const [user,setUser] = useState({
+        name:"",
+        email:""
+    })
     const fetchProfile = () =>{
 
         fetch(`http://localhost:5000/users/me/`,{
@@ -25,6 +29,10 @@ const ClientPage = () => {
                   
                   response.json().then(data => {
                         console.log(data)
+                        setUser({
+                            name:data.name,
+                            email:data.email
+                        })
                   });
                }
               else{
@@ -46,7 +54,7 @@ const ClientPage = () => {
             {loggedIn}
             <HyperopsNavbar/>
             <Landing/>
-            <Booking/>
+            <Booking name = {user.name} email = {user.email}/>
             <Schedule/>
         </div>
     )

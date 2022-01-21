@@ -38,7 +38,7 @@ const DateTime = () => {
             setstatusStyle(NotActiveStyle);
             
         }
-    });
+    },[]);
 
     return (
         <div style={{

@@ -61,7 +61,7 @@ const HyperopsNavbar = () => {
                 <Nav className="me-auto">
                     <Nav.Link href="#booking">Book</Nav.Link>
                     <Nav.Link href="#schedule">Schedule</Nav.Link>
-                    <Nav.Link  style = {{transform: "translate(950%,0px)", fontWeight:"bold"}}  >Hi, {userName}</Nav.Link>
+                    <Nav.Link  style = {{transform: "translate(500%,0px)", fontWeight:"bold"}}  >Hi, {userName}</Nav.Link>
                 </Nav>
                 
                 </Navbar.Collapse>

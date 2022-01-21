@@ -1,9 +1,80 @@
-import React from 'react'
+import React, { useState } from 'react'
 import '../../assets/css/booking.css';
 import DateTime from './DateTime';
 import Schedule from './Schedule';
 
-const DetailsBox = () => {
+
+
+const DetailsBox = (props) => {
+
+    const [bookingDetails, setBookingDetails] = useState({
+        city:"",
+        pod:"",
+        transportMode : ""
+    });
+    const cityHandler = (e) => {
+        setBookingDetails((prev) => {
+            return{
+                ...prev,
+                city:e.target.value
+            }
+        })
+     
+    }
+    const podHandler = (e) => {
+        setBookingDetails((prev) => {
+            return{
+                ...prev,
+                pod:e.target.value
+            }
+        })
+     
+    }
+    const transportModeHandler = (e) => {
+        setBookingDetails((prev) => {
+            return{
+                ...prev,
+                transportMode:e.target.value
+            }
+        })
+     
+    }
+ 
+    const bookingHandler = (e) => {
+        e.preventDefault();
+        
+        const requestOptions = {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body:JSON.stringify({
+                'name':props.name,
+                'email':props.email,
+                'city':bookingDetails.city,
+                'pod':bookingDetails.pod,
+                'transportMode': bookingDetails.transportMode
+            }),  
+            credentials: "include"
+            };
+            fetch(`http://localhost:5000/bookings/new`, requestOptions )
+                    .then(async response => {
+                        if(response.ok){
+                            response.json().then(data => {
+                                console.log(data);    
+                                alert("Booking Succesfull")            
+                            });
+                            
+                         }
+                        else{
+                            alert("Booking Unsuccesfull Try Again, Please Try Again !")
+                            throw response.json();
+                        }
+                      })
+                      .catch(async (error) => {
+                        const errorMessage = await error;
+                        console.log(errorMessage);
+                      })
+    }
+
     return (
         <div className="details-box">
             <DateTime/>
@@ -25,12 +96,12 @@ const DetailsBox = () => {
             <h1 className='bookh1'>Book Now !</h1>
             <div className='booknowspace'>
                 <div className='userform'>
-                    <select name="Destination" id="destination">
+                    <select name="Destination" onChange={(e) => cityHandler(e)} id="destination">
                         <option value="none">Destination City</option>
-                        <option value="mumbai">Mumbai</option>
-                        <option value="pune">Pune</option>
+                        <option value="mumbai" >Mumbai</option>
+                        <option value="pune" >Pune</option>
                     </select>        
-                    <select name="PodNumber" id="pn">
+                    <select onChange={(e) => podHandler(e)}name="PodNumber" id="pn">
                         <option value="none">Select Pod</option>
                         <option value="M1">M1</option>
                         <option value="M2">M2</option>
@@ -45,7 +116,7 @@ const DetailsBox = () => {
                         <option value="P5">P5</option>
                         <option value="P6">P6</option>
                     </select>
-                    <select name="PodNumber" id="pn">
+                    <select onChange={(e) => transportModeHandler(e)} name="Mode Of Transport" id="mot">
                         <option value="none">Mode of transport that you will use</option>
                         <option value="Taxi">Taxi</option>
                         <option value="Parking">Parking</option>
@@ -53,7 +124,7 @@ const DetailsBox = () => {
                         <option value="exit">Exit</option>
                     </select>
                 </div>
-                <button className='bookbtn'>Book</button>
+                <button onClick = {(e) => bookingHandler(e)} className='bookbtn'>Book</button>
             </div>
         </div>
     )

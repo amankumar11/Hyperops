@@ -3,6 +3,7 @@ const cors = require("cors");
 const mongoose = require("mongoose");
 const passport = require("passport");
 const authRoutes = require("./routes/authRoutes");
+const bookingRoutes = require("./routes/bookingsRoutes");
 const session = require("express-session");
 const cookieParser = require("cookie-parser");
 const bodyParser = require("body-parser");
@@ -52,3 +53,4 @@ app.listen(5000,()=>{
 })
 
 app.use(authRoutes);
+app.use(bookingRoutes);
