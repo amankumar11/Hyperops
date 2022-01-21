@@ -26,12 +26,37 @@ const Register = () => {
 
     const register = () =>{
         const {name, email, password, reEnterPassword} = user
-        if(name && email && password && (password === reEnterPassword)){
-            axios.post("http://localhost:5000/register", user)
-            .then(res => {
-                alert(res.data.message)
-                history.push("/login")
-            })
+        if(name && email && password && (password === reEnterPassword))
+        {
+            const requestOptions = {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body:JSON.stringify({
+                    'name':user.name,
+                    'email':user.email,
+                    'password':user.password
+                }),  
+                credentials: "include"
+                };
+                fetch(`http://localhost:5000/register`, requestOptions )
+                        .then(async response => {
+                            if(response.ok){
+                                response.json().then(data => {
+                                    console.log(data);
+                                    data.newUser.name !== undefined ? alert("User Registered Succesfully") : alert("Error In Registering, Try Again !")
+                                    history.push("/")
+                                });
+                                
+                             }
+                            else{
+                                alert("Error In Registering, Try Again !")
+                                throw response.json();
+                            }
+                          })
+                          .catch(async (error) => {
+                            const errorMessage = await error;
+                            console.log(errorMessage);
+                          })
             
         }else{
             alert("Invalid input");

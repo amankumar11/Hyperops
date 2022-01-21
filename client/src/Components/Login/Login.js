@@ -1,11 +1,11 @@
 import React from 'react'
 import { useState } from 'react'
 import axios from "axios";
-import { useHistory } from 'react-router-dom';
+import { Redirect, useHistory } from 'react-router-dom';
 import '../../assets/css/loginRegister.css';
 import Logo from '../../assets/img/virginLogo.png';
 
-const Login = ({setloginuser}) => {
+const Login = ({}) => {
 
     const history = useHistory();
 
@@ -21,18 +21,45 @@ const Login = ({setloginuser}) => {
             [name]: value
         })
     }
-
+    const [loggedIn,setLoggedIn] = useState(null);
     const login = () =>{
-        axios.post("http://localhost:5000/login", user)
-        .then(res => {
-            alert(res.data.message)
-            setloginuser(res.data.user)
-            history.push("/")
-        });
+        const requestOptions = {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body:JSON.stringify({
+                'email':user.email,
+                'password':user.password
+            }),  
+            credentials: "include"
+            };
+            fetch(`http://localhost:5000/login/localUser`, requestOptions )
+                    .then(async response => {
+                        if(response.ok){
+                            response.json().then(data => {
+                                console.log(data);
+                                if(data.user.name !== undefined)
+                                {
+                                    setLoggedIn(<Redirect to="/client"></Redirect>);
+                                }
+                                
+                            });
+                            
+                         }
+                        else{
+                            alert("Invalid Credentials, Please Try Again !")
+                            throw response.json();
+                        }
+                      })
+                      .catch(async (error) => {
+                        const errorMessage = await error;
+                        console.log(errorMessage);
+                      })
     }
 
+   
     return (
         <div className='loginPage'>
+           {loggedIn}
             <div className='bootPageL'>
                 
             </div>
@@ -44,13 +71,12 @@ const Login = ({setloginuser}) => {
                     <input className="forminput" type="text" name="email" value={user.email} placeholder='Enter your Email' onChange={ handleChange }></input>
                     <input class="forminput" type="password" name="password" value={user.password} placeholder='Enter your Password' onChange={ handleChange }></input>
                     <button className="btn">
-                        <div className='button' onClick={login}>Login</div>
+                        <div className='button' onClick={() => login()}>Login</div>
                     </button>
                     <div>or</div>
                     <button className="btn">
                         <div className='button' onClick={() => history.push("/register")}>Register</div>
                     </button>
-                    
                 </div>
             </div>
             

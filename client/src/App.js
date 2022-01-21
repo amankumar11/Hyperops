@@ -21,23 +21,17 @@ import ScheduleTable from './Components/ScheduleSection/ScheduleTable';
 
 function App() {
 
-  const [user, setloginuser] = useState({})
+
 
   return (
     <div id="home">
       <Router>
         <Switch>
-          <Route exact path="/">
-            {
-              user && user._id
-              ?
-              <ClientPage/>
-              :
-              <Login setloginuser={setloginuser}/>
-            }
+        <Route exact path="/">
+          <Login/>
           </Route>
-          <Route path="/login">
-            <Login setloginuser={setloginuser}/>
+          <Route path="/client">
+            <ClientPage/>
           </Route>
           <Route path="/register">
             <Register/>

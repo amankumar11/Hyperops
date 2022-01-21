@@ -1,14 +1,50 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Navbar from '../Components/Navbar';
+import HyperopsNavbar from '../Components/Navbar';
 import Landing from '../Components/Landing';
 import Booking from '../Components/BookingSection/Booking';
 import Schedule from '../Components/ScheduleSection/Schedule';
+import { Redirect } from 'react-router-dom';
 
-const clientPage = () => {
+const ClientPage = () => {
+
+    const [loggedIn,setLoggedIn] = useState(null);
+    const fetchProfile = () =>{
+
+        fetch(`http://localhost:5000/users/me/`,{
+            method:"GET",
+            headers: {
+              'Accept': 'application/json',
+              'Content-Type': 'application/json',
+              'Cache': 'no-cache'
+            },
+            credentials: 'include'
+          })
+          .then(async response => {
+              if(response.ok){
+                  
+                  response.json().then(data => {
+                        console.log(data)
+                  });
+               }
+              else{
+                  setLoggedIn(<Redirect to ="/"/>);
+                  throw response.json();
+              }
+            })
+            .catch(async (error) => {
+              const errorMessage = await error;
+                console.log(errorMessage);
+            })
+    }
+
+    useEffect(( () => {
+        fetchProfile();
+    }),[])
     return (
         <div>
-            <Navbar/>
+            {loggedIn}
+            <HyperopsNavbar/>
             <Landing/>
             <Booking/>
             <Schedule/>
@@ -16,4 +52,4 @@ const clientPage = () => {
     )
 }
 
-export default clientPage
+export default ClientPage

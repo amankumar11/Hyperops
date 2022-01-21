@@ -3,9 +3,46 @@ import { Navbar } from 'react-bootstrap';
 import { Nav } from 'react-bootstrap';
 import { Container } from 'react-bootstrap';
 import { NavDropdown } from 'react-bootstrap';
+import { useState, useEffect } from 'react';
 import virginlogo from '../assets/img/virginLogo.png';
 
-const navbar = () => {
+const HyperopsNavbar = () => {
+
+    const [userName,setUserName] = useState(null);
+    const fetchProfile = () =>{
+
+        fetch(`http://localhost:5000/users/me/`,{
+            method:"GET",
+            headers: {
+              'Accept': 'application/json',
+              'Content-Type': 'application/json',
+              'Cache': 'no-cache'
+            },
+            credentials: 'include'
+          })
+          .then(async response => {
+              if(response.ok){
+                  
+                  response.json().then(data => {
+                            setUserName(data.name);
+                  });
+               }
+              else{
+                
+                  throw response.json();
+              }
+            })
+            .catch(async (error) => {
+              const errorMessage = await error;
+                console.log(errorMessage);
+            })
+    }
+
+    useEffect(( () => {
+        fetchProfile();
+    }),[])
+
+
     return (
         <div>
             <Navbar bg="light" expand="lg" fixed="top">
@@ -24,7 +61,9 @@ const navbar = () => {
                 <Nav className="me-auto">
                     <Nav.Link href="#booking">Book</Nav.Link>
                     <Nav.Link href="#schedule">Schedule</Nav.Link>
+                    <Nav.Link  style = {{transform: "translate(950%,0px)", fontWeight:"bold"}}  >Hi, {userName}</Nav.Link>
                 </Nav>
+                
                 </Navbar.Collapse>
             </Container>
             </Navbar>
@@ -32,4 +71,4 @@ const navbar = () => {
     )
 }
 
-export default navbar
+export default HyperopsNavbar
