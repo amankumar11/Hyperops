@@ -25,11 +25,14 @@ const DetailsBox = () => {
             <h1 className='bookh1'>Book Now !</h1>
             <div className='booknowspace'>
                 <div className='userform'>
+                    <div>
+                        <span className='tooltiptext'>Tooltip Text</span>
                     <select name="Destination" id="destination">
                         <option value="none">Destination City</option>
                         <option value="mumbai">Mumbai</option>
                         <option value="pune">Pune</option>
-                    </select>        
+                    </select> 
+                    </div>       
                     <select name="PodNumber" id="pn">
                         <option value="none">Select Pod</option>
                         <option value="M1">M1</option>
@@ -54,6 +57,10 @@ const DetailsBox = () => {
                     </select>
                 </div>
                 <button className='bookbtn'>Book</button>
+                <div className='note'>
+                    <p>*Select the Pod Number according to your timing by refering to the schedule section</p>
+                    <p>*Choose the mode of transport that you will use after arrival</p>
+                </div>
             </div>
         </div>
     )
