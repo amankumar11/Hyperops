@@ -17,6 +17,19 @@
     width: 100%;
 }
 
+.usertable tr th{
+    width: 162px;
+}
+
+.details td{
+    width: 160px;
+}
+
+.changebtn{
+    background-color: rgb(35, 3, 66)!important;
+    color: white!important;
+}
+
 /* .usertable-div div{
     display: flex;
     align-items: center;

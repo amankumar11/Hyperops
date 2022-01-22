@@ -4,6 +4,8 @@ import axios from "axios";
 import { useHistory } from 'react-router-dom';
 import '../../assets/css/loginRegister.css';
 import Logo from '../../assets/img/virginLogo.png';
+import Footer from '../Footer';
+import { Navbar } from 'react-bootstrap';
 
 const Register = () => {
 
@@ -65,6 +67,7 @@ const Register = () => {
     }
 
     return (
+        <div>
         <div className='registerPage'>
             <div className='bootPageL'>
 
@@ -87,6 +90,8 @@ const Register = () => {
                     
                 </div>
             </div>
+        </div>
+            <Footer/>
         </div>
     )
 }

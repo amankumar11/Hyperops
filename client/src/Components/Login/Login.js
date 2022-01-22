@@ -4,6 +4,7 @@ import axios from "axios";
 import { Redirect, useHistory } from 'react-router-dom';
 import '../../assets/css/loginRegister.css';
 import Logo from '../../assets/img/virginLogo.png';
+import Footer from '../Footer';
 
 const Login = ({}) => {
 
@@ -95,6 +96,7 @@ const Login = ({}) => {
     }),[])
    
     return (
+        <div>
         <div className='loginPage'>
            {loggedIn}
             <div className='bootPageL'>
@@ -116,7 +118,9 @@ const Login = ({}) => {
                     </button>
                 </div>
             </div>
-            
+        </div>
+        
+            <Footer/>
         </div>
     )
 }

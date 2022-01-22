@@ -3,8 +3,6 @@ import '../../assets/css/schedule.css';
 import ScheduleTable from './ScheduleTable';
 import Pod from '../../assets/img/Pod1.png';
 import { useState } from 'react';
-import Mumbtn from './Mumbtn';
-import pdf from './Abstract_HO-217531.pdf';
 import { Col } from 'react-bootstrap';
 
 const Schedule = () => {

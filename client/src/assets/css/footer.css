@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300&display=swap');
+
+.footer{
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+    /* background-color: #230342; */
+    /* background: url('../img/Pod1.png'); */
+    /* background-blend-mode: overlay; */
+    background:linear-gradient( #230342d2 100%, #2303423f 100%),url("../img/Pod1.png");
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    height: 50vh;
+    color: white;
+}
+
+.footer-content, .footer-map{
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    /* align-items: center; */
+    width: 50%;
+    font-family: 'IBM Plex Sans', sans-serif;
+}
+
+.footer-map{
+    align-items: center;
+    justify-content: center;
+}
+
+.footer-map img{
+    border-radius: 10px;
+    border: 2px solid rgba(255, 255, 255, 0.432);
+}
+
+.footer-content{
+    margin: 20px 0px 0px 100px;
+}
+
+.footer-content h1{
+    font-weight: 400;
+}
+
+.dev{
+    display: flex;
+    flex-direction: row;
+    /* justify-content: center; */
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.dev p{
+    margin: 0;
+    margin-left: 10px;
+    font-size: large;
+}
+
+.devname{
+    color: white;
+}
+
+a:hover{
+    color: white;
+}
+
+.dev img{
+    border-radius: 100px;
+    border: 2px solid rgba(255, 255, 255, 0.404);
+}
+
+.github{
+    display: flex;
+    align-items: flex-end;
+    height: 50%;
+    /* margin-left: 50%; */
+}
+
+.githubbtn{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+    padding: 0px 10px;
+    border-radius: 25px;
+    margin-bottom: 10px;
+}
+
+.githubbtn p{
+    color: white;
+    margin: 0;
+}
+
+.github img{
+    border-radius: 50px;
+}

@@ -1,9 +1,80 @@
-import React from 'react'
+import React, { useState } from 'react'
 import '../../assets/css/booking.css';
 import DateTime from './DateTime';
 import Schedule from './Schedule';
 
-const DetailsBox = () => {
+
+
+const DetailsBox = (props) => {
+
+    const [bookingDetails, setBookingDetails] = useState({
+        city:"",
+        pod:"",
+        transportMode : ""
+    });
+    const cityHandler = (e) => {
+        setBookingDetails((prev) => {
+            return{
+                ...prev,
+                city:e.target.value
+            }
+        })
+     
+    }
+    const podHandler = (e) => {
+        setBookingDetails((prev) => {
+            return{
+                ...prev,
+                pod:e.target.value
+            }
+        })
+     
+    }
+    const transportModeHandler = (e) => {
+        setBookingDetails((prev) => {
+            return{
+                ...prev,
+                transportMode:e.target.value
+            }
+        })
+     
+    }
+ 
+    const bookingHandler = (e) => {
+        e.preventDefault();
+        
+        const requestOptions = {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body:JSON.stringify({
+                'name':props.name,
+                'email':props.email,
+                'city':bookingDetails.city,
+                'pod':bookingDetails.pod,
+                'transportMode': bookingDetails.transportMode
+            }),  
+            credentials: "include"
+            };
+            fetch(`http://localhost:5000/bookings/new`, requestOptions )
+                    .then(async response => {
+                        if(response.ok){
+                            response.json().then(data => {
+                                console.log(data);    
+                                alert("Booking Succesfull")            
+                            });
+                            
+                         }
+                        else{
+                            alert("Booking Unsuccesfull Try Again, Please Try Again !")
+                            throw response.json();
+                        }
+                      })
+                      .catch(async (error) => {
+                        const errorMessage = await error;
+                        console.log(errorMessage);
+                      })
+    }
+
     return (
         <div className="details-box">
             <DateTime/>
@@ -26,15 +97,16 @@ const DetailsBox = () => {
             <div className='booknowspace'>
                 <div className='userform'>
                     <div>
-                        <select name="Destination" id="destination">
+                        <span className='tooltiptext'>Enter Destination</span>
+                        <select name="Destination" onChange={(e) => cityHandler(e)} id="destination">
                             <option value="none">Destination City</option>
-                            <option value="mumbai">Mumbai</option>
-                            <option value="pune">Pune</option>
-                        </select> 
-                        <span className='tooltiptext'>Enter your destination city</span>
+                            <option value="mumbai" >Mumbai</option>
+                            <option value="pune" >Pune</option>
+                        </select>        
                     </div>     
-                    <div>  
-                        <select name="PodNumber" id="pn">
+                    <div>
+                         <span className='tooltiptext'>Select Your Pod</span>
+                        <select onChange={(e) => podHandler(e)}name="PodNumber" id="pn">
                             <option value="none">Select Pod</option>
                             <option value="M1">M1</option>
                             <option value="M2">M2</option>
@@ -49,24 +121,23 @@ const DetailsBox = () => {
                             <option value="P5">P5</option>
                             <option value="P6">P6</option>
                         </select>
-                        <span className='tooltiptext'>Refer to the Schedule to see the pod no.</span>
                     </div>
                     <div>
-                        <select name="PodNumber" id="pn">
+                        <span className='tooltiptext'>Enter Transportation Mode</span>
+                        <select onChange={(e) => transportModeHandler(e)} name="Mode Of Transport" id="mot">
                             <option value="none">Mode of transport that you will use</option>
                             <option value="Taxi">Taxi</option>
                             <option value="Parking">Parking</option>
                             <option value="Metro">Metro</option>
                             <option value="exit">Exit</option>
                         </select>
-                        <span className='tooltiptext'>Mode of transport that you will use after arrival</span>
                     </div>
                 </div>
-                <button className='bookbtn'>Book</button>
-                {/* <div className='note'>
-                    <p>*Select the Pod Number according to your timing by refering to the schedule section</p>
-                    <p>*Choose the mode of transport that you will use after arrival</p>
-                </div> */}
+                    <button onClick = {(e) => bookingHandler(e)} className='bookbtn'>Book</button>
+                    <div className='note'>
+                        <p>*Select the Pod Number according to your timing by refering to the schedule section</p>
+                        <p>*Choose the mode of transport that you will use after arrival</p>
+                    </div>
             </div>
         </div>
     )
