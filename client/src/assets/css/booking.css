@@ -103,7 +103,11 @@
     flex-direction: row;
 }
 
-.userform select{
+.userform div{
+    width: 360px;
+}
+
+.userform div select{
     margin: 10px 20px;
     width: 350px;
     height: 40px;
@@ -127,27 +131,25 @@
 
 }
 
-.note{
+/* .note{
     font-weight: 100;
     color: red;
-}
+} */
 
-/* Tooltip text */
+/* Tooltip*/
 .tooltiptext {
     visibility: hidden;
-    width: 120px;
+    width: 150px;
     background-color: black;
     color: #fff;
     text-align: center;
     padding: 5px 0;
     border-radius: 6px;
-   
-    /* Position the tooltip text - see examples below! */
     position: absolute;
     z-index: 1;
+
   }
   
-  /* Show the tooltip text when you mouse over the tooltip container */
   .userform div:hover .tooltiptext {
     visibility: visible;
   }
