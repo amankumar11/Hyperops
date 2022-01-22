@@ -39,6 +39,73 @@ const UserTable = () => {
     fetchAllBookings();
   },[])
 
+  const updateBookingDetails = (bookingId,podNo) => {
+
+    const requestOptions = {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body:JSON.stringify({
+          id:bookingId,
+          pod:podNo
+      }),  
+      credentials: "include"
+      };
+      fetch(`http://localhost:5000/bookings/update`, requestOptions )
+              .then(async response => {
+                  if(response.ok){
+                         
+                          swal({
+                            title:"Booking Update Successful !!"
+                          }).then(() => {
+                            window.location.reload()
+                          })
+                      
+                   }
+                  else{
+                      alert("Invalid Request, Please Try Again !")
+                      throw response.json();
+                  }
+                })
+                .catch(async (error) => {
+                  const errorMessage = await error;
+                  console.log(errorMessage);
+                })
+
+  }
+
+  const deleteBooking = (bookingId) => {
+
+    const requestOptions = {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body:JSON.stringify({
+          id:bookingId,
+      }),  
+      credentials: "include"
+      };
+      fetch(`http://localhost:5000/bookings/delete`, requestOptions )
+              .then(async response => {
+                  if(response.ok){
+                         
+                          swal({
+                            title:"Booking Deletion Successful !!"
+                          }).then(() => {
+                            window.location.reload()
+                          })
+                      
+                   }
+                  else{
+                      alert("Invalid Request, Please Try Again !")
+                      throw response.json();
+                  }
+                })
+                .catch(async (error) => {
+                  const errorMessage = await error;
+                  console.log(errorMessage);
+                })
+
+  }
+
 
   return (
   <div className='usertable-div'>
@@ -53,6 +120,7 @@ const UserTable = () => {
                     <th>Pod Number</th>
                     <th>Mode of Transport</th>
                     <th>Change Pod Number</th>
+                    <th>Delete Booking</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -63,17 +131,41 @@ const UserTable = () => {
                         <td>{booking.city}</td>
                         <td>{booking.pod}</td>
                         <td>{booking.transportMode}</td>
-                        <button class="changebtn" onClick={() => {
+                        <td>
+                            <button id = {booking._id} class="changebtn" onClick={(() => {
+                              swal({
+                                title:"Enter Updated Pod Number",
+                                content: {
+                                  element: "input",
+                                  attributes: {
+                                    placeholder: "Change Pod Number",
+                                    type: "text",
+                                  },
+                                },
+                              })
+                              .then(podNo => {
+                                if(!podNo)
+                                {
+                                  swal("Enter The Pod Number Correctly ! ")
+                                }
+                                else
+                                {
+                                  updateBookingDetails(booking._id, podNo);
+                                }
+                              })
+                            })}>Change Pod No.</button>
+                        </td>
+                        <td>
+                        <button id = {booking._id} class="changebtn" onClick={(() => {
+
                           swal({
-                            content: {
-                              element: "input",
-                              attributes: {
-                                placeholder: "Change Pod Number",
-                                type: "text",
-                              },
-                            },
-                          });
-                        }}>Change Pod No.</button>
+                            title:"Are You Sure You Want To Delete This Booking ?"
+                          }).then(() => {
+                            deleteBooking(booking._id);
+                          })
+
+                          })}> Delete Booking</button>
+                        </td>
                       </tr>
                   })}
                     
