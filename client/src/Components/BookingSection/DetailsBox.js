@@ -60,12 +60,12 @@ const DetailsBox = (props) => {
                         if(response.ok){
                             response.json().then(data => {
                                 console.log(data);    
-                                alert("Booking Succesfull")            
+                                alert("Booking Successful, Ticket Details Sent On The Registered Email !")            
                             });
                             
                          }
                         else{
-                            alert("Booking Unsuccesfull Try Again, Please Try Again !")
+                            alert("Booking Unsuccessful Try Again, Please Try Again !")
                             throw response.json();
                         }
                       })
@@ -94,6 +94,7 @@ const DetailsBox = (props) => {
             </div>
             <Schedule/>
             <h1 className='bookh1'>Book Now !</h1>
+            <p style={{color:"grey"}}>Ticket Details Will be Sent On The Registered Email Upon Confirmation !</p>
             <div className='booknowspace'>
                 <div className='userform'>
                     <div>

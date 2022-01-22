@@ -45,7 +45,7 @@ const Register = () => {
                             if(response.ok){
                                 response.json().then(data => {
                                     console.log(data);
-                                    data.newUser.name !== undefined ? alert("User Registered Succesfully") : alert("Error In Registering, Try Again !")
+                                    data.newUser.name !== undefined ? alert("User Registered Successfully") : alert("Error In Registering, Try Again !")
                                     history.push("/")
                                 });
                                 
