@@ -2,13 +2,14 @@ import React, { useEffect, useState } from 'react';
 import { Navbar, Table } from 'react-bootstrap';
 import '../../assets/css/usertable.css';
 import swal from 'sweetalert';
+import URL from "../../URL";
 
 const UserTable = () => {
 
   const [bookings, setBookings] = useState([]);
   const fetchAllBookings = () => {
         
-          fetch(`http://localhost:5000/bookings/all`,{
+          fetch(`${URL}/bookings/all`,{
             method:"GET",
             headers: {
               'Accept': 'application/json',
@@ -50,7 +51,7 @@ const UserTable = () => {
       }),  
       credentials: "include"
       };
-      fetch(`http://localhost:5000/bookings/update`, requestOptions )
+      fetch(`${URL}/bookings/update`, requestOptions )
               .then(async response => {
                   if(response.ok){
                          
@@ -83,7 +84,7 @@ const UserTable = () => {
       }),  
       credentials: "include"
       };
-      fetch(`http://localhost:5000/bookings/delete`, requestOptions )
+      fetch(`${URL}/bookings/delete`, requestOptions )
               .then(async response => {
                   if(response.ok){
                          

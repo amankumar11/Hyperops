@@ -6,6 +6,7 @@ import Booking from '../Components/BookingSection/Booking';
 import Schedule from '../Components/ScheduleSection/Schedule';
 import { Redirect } from 'react-router-dom';
 import Footer from '../Components/Footer';
+import URL from '../URL';
 
 const ClientPage = () => {
 
@@ -16,7 +17,7 @@ const ClientPage = () => {
     })
     const fetchProfile = () =>{
 
-        fetch(`http://localhost:5000/users/me/`,{
+        fetch(`${URL}/users/me/`,{
             method:"GET",
             headers: {
               'Accept': 'application/json',

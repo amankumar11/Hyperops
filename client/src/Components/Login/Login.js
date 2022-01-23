@@ -5,6 +5,8 @@ import { Redirect, useHistory } from 'react-router-dom';
 import '../../assets/css/loginRegister.css';
 import Logo from '../../assets/img/virginLogo.png';
 import Footer from '../Footer';
+import URL from '../../URL';
+
 
 const Login = ({}) => {
 
@@ -33,7 +35,7 @@ const Login = ({}) => {
             }),  
             credentials: "include"
             };
-            fetch(`http://localhost:5000/login/localUser`, requestOptions )
+            fetch(`${URL}/login/localUser`, requestOptions )
                     .then(async response => {
                         if(response.ok){
                             response.json().then(data => {
@@ -60,7 +62,7 @@ const Login = ({}) => {
 
     const fetchProfile = () =>{
 
-        fetch(`http://localhost:5000/users/me/`,{
+        fetch(`${URL}/users/me/`,{
             method:"GET",
             headers: {
               'Accept': 'application/json',

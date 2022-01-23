@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import '../../assets/css/booking.css';
 import DateTime from './DateTime';
 import Schedule from './Schedule';
-
+import URL from '../../URL';
 
 
 const DetailsBox = (props) => {
@@ -55,7 +55,7 @@ const DetailsBox = (props) => {
             }),  
             credentials: "include"
             };
-            fetch(`http://localhost:5000/bookings/new`, requestOptions )
+            fetch(`${URL}/bookings/new`, requestOptions )
                     .then(async response => {
                         if(response.ok){
                             response.json().then(data => {

@@ -6,6 +6,7 @@ import { NavDropdown } from 'react-bootstrap';
 import { useState, useEffect } from 'react';
 import virginlogo from '../assets/img/virginLogo.png';
 import { Redirect } from 'react-router-dom';
+import URL from "../URL"
 
 const HyperopsNavbar = () => {
 
@@ -13,7 +14,7 @@ const HyperopsNavbar = () => {
     const [userName,setUserName] = useState(null);
     const fetchProfile = () =>{
 
-        fetch(`http://localhost:5000/users/me/`,{
+        fetch(`${URL}/users/me/`,{
             method:"GET",
             headers: {
               'Accept': 'application/json',
@@ -41,7 +42,7 @@ const HyperopsNavbar = () => {
     }
 
     const logOutHandler = () => {
-        fetch(`http://localhost:5000/users/logout`,{
+        fetch(`${URL}/users/logout`,{
             method:"GET",
             headers: {
               'Accept': 'application/json',

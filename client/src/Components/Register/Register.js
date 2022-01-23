@@ -6,6 +6,7 @@ import '../../assets/css/loginRegister.css';
 import Logo from '../../assets/img/virginLogo.png';
 import Footer from '../Footer';
 import { Navbar } from 'react-bootstrap';
+import URL from '../../URL';
 
 const Register = () => {
 
@@ -40,7 +41,7 @@ const Register = () => {
                 }),  
                 credentials: "include"
                 };
-                fetch(`http://localhost:5000/register`, requestOptions )
+                fetch(`${URL}/register`, requestOptions )
                         .then(async response => {
                             if(response.ok){
                                 response.json().then(data => {

@@ -5,12 +5,13 @@ import Footer from '../Components/Footer';
 import HyperopsNavbar from '../Components/Navbar';
 import { useState, useEffect } from 'react';
 import { Redirect } from 'react-router-dom';
+import URL from '../URL';
 const AdminPage = () => {
 
     const [loggedIn,setLoggedIn] = useState(null);
     const fetchProfile = () =>{
 
-        fetch(`http://localhost:5000/users/me/`,{
+        fetch(`${URL}/users/me/`,{
             method:"GET",
             headers: {
               'Accept': 'application/json',
