@@ -1,6 +1,7 @@
-
 <p align='center'><img src='./client/src/assets/img/virginLogo.png' width="150" ></p>
-<h1 align='center'> Bandra Kurla Portal</h1>
+<h1 href = "https://hyperloop-booking.herokuapp.com/" align='center'> Bandra Kurla Portal</h1>
+<p align="center"> <a href="https://hyperloop-booking.herokuapp.com/" > Click Here To Go The Website !</a> </p>
+
 <p align='center'>
 Virgin Hyperloop is working with the State of Maharashtra to develop a Pune to Mumbai hyperloop which will slash journey times down to 25 minutes, support 150 million passenger trips annually, and create a thriving megaregion. It would be a transformative move as it would create socio-economic benefits upwards of 36 billio USD $. The route will be a catalyst for growth as it would create new job totaling 180 thousand and the best part is, it is Environment friendly as it will reduce annual pollution by 150 thousand.<br/> <br/>
 So we created an Online Portal to manage passenger flow in a hyperloop portal while maintaining targets for level of service and passenger experience. The portal is developed to maintain the smooth flow of all the passengers in and out of the Pod keeping in mind the capacity of passengers to be shipped per hour and minimizing the waiting time of the passengers on the platform. The system is designed such that the passenger will be automatically directed towards the Pod they can catch smoothly and comfortably without any rush. It also helps to keep the traffic of both the stations (ie Mumbai and Pune) distributed equally amongst all the pods, so that there is no delay in transporting passengers as well as all the passengers are transported in time.<br/> <strong>Made with ❤ by Team-HO-217531</strong>
