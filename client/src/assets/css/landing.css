@@ -50,3 +50,37 @@
     border-radius: 25px;
     font-family: 'Cabin', sans-serif;
 }
+
+/* Iphone X  */
+@media screen and (max-width: 420px) and (min-width: 385px) and (-webkit-min-device-pixel-ratio: 1) and (min-resolution: 192dpi){
+    .landing-main .head1a{
+        font-size: 30px;
+    }
+    .landing-main .head1b{
+        font-size: 30px;
+        margin-top: 67vh;
+    }
+    .landing-main .head2{
+        margin-top: 75vh;
+    }
+    .headbtn{
+        margin-top: 80vh;
+    }
+}
+
+/* Iphone SE  */
+@media screen and (max-width: 385px) and (-webkit-min-device-pixel-ratio: 1) and (min-resolution: 192dpi){
+    .landing-main .head1a{
+        font-size: 22px;
+    }
+    .landing-main .head1b{
+        font-size: 22px;
+        margin-top: 67vh;
+    }
+    .landing-main .head2{
+        margin-top: 75vh;
+    }
+    .headbtn{
+        margin-top: 80vh;
+    }
+}

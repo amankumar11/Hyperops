@@ -64,3 +64,27 @@
     background-color: #23034215;
     border: 2px solid #230342e7;
 }
+
+@media screen and (max-width: 420px) and (-webkit-min-device-pixel-ratio: 1) and (min-resolution: 192dpi){
+       .bootPageL{
+           /* display: none; */
+           width: 100%;
+       }
+
+       .bootPageR{
+           position: absolute;
+       }
+
+       .loginform{
+           width: 350px;
+           background-color: rgba(0, 0, 0, 0.671);
+       }
+
+       .forminput{
+           width: 300px;
+       }
+
+       .loginform h1{
+           color: white;
+       }
+}

@@ -110,7 +110,7 @@ const UserTable = () => {
   return (
   <div className='usertable-div'>
       <h1>User Details</h1>
-      <div>
+      <div className='table-responsive'>
         <Table striped bordered className='usertable'>
                 <thead className='usertable'>
                     <tr>

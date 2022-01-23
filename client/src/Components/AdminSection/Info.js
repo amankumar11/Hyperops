@@ -5,7 +5,7 @@ import UserTable from './UserTable';
 
 const Info = () => {
     return (
-        <div className="booking-section" id="booking">
+        <div className="booking-section-admin" id="booking">
             <div className="bookingadmin-box">
                 <AdminDetails/>
             </div>

@@ -95,3 +95,54 @@ a:hover{
 .github img{
     border-radius: 50px;
 }
+
+@media screen and (max-width: 1300px) and (-webkit-min-device-pixel-ratio: 1){
+    .footer-map img{
+        width: 600px;
+        margin-right: 25px;
+    }    
+}
+
+/* Iphone X */
+@media screen and (max-width: 420px) and (min-width: 385px) and (-webkit-min-device-pixel-ratio: 1) and (min-resolution: 192dpi){
+    .footer{
+        flex-direction: column;
+        height: 70vh;
+    }
+    .footer-content, .footer-map{
+        width: 100%;
+    }
+
+    .footer-content{
+        margin: 0;
+        align-items: center;
+        /* height: 1000px; */
+    }
+
+    .footer-map img{
+        margin: 0;
+        width: 380px;
+    }
+}
+
+/* Iphone SE  */
+@media screen and (max-width: 385px) and (-webkit-min-device-pixel-ratio: 1) and (min-resolution: 192dpi){
+    .footer{
+        flex-direction: column;
+        height: 100vh;
+    }
+    .footer-content, .footer-map{
+        width: 100%;
+    }
+
+    .footer-content{
+        margin: 0;
+        align-items: center;
+        /* height: 1000px; */
+    }
+
+    .footer-map img{
+        margin: 0;
+        width: 360px;
+    }
+}
