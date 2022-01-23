@@ -10,6 +10,7 @@ const authRoutes = require("./routes/authRoutes");
 const bookingRoutes = require("./routes/bookingsRoutes");
 const session = require("express-session");
 const cookieParser = require("cookie-parser");
+const path = require('path')
 
 const app = express();
 app.use(express.json())
