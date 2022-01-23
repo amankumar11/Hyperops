@@ -24,7 +24,7 @@ Your appreciation makes us grow and glow up. ⭐
 <table>
   <tr>
     <td align="center"><a href="http://amankumar.ga/"><img src="./client/src/assets/img/Aman1.jpeg" width="100px;" alt=""/><br /><sub><b>Aman Kumar</b></sub></a><br /><a href="" title="Tests">⚠️</a><a href="#design-kirito-236" title="Design">🎨</a><a href="" title="Code">💻</a> <a href="" title="Frontend">🖼️</a><a href="#ideas-Aniket762" title="Ideas, Planning, & Feedback">🤔</a> <a href="" title="Documentation">📖</a> <a href="#projectManagement-Aniket762" title="Project Management">📆</a></td>
-    <td align="center"><a href="https://shivamdargan.gatsbyjs.io/"><img src="./client/src/assets/img/shivam.jpeg" width="100px;" alt=""/><br /><sub><b>Shivam Dargan</b></sub></a><br /><a href="" title="Tests">⚠️</a><a href="#infra-kirito-236" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a> <a href="" title="Code">💻</a> <a href="" title="Backend">⚙️</a></td>
+    <td align="center"><a href="https://shivamdargan.gatsbyjs.io/"><img src="./client/src/assets/img/hivam.jpeg" width="100px;" alt=""/><br /><sub><b>Shivam Dargan</b></sub></a><br /><a href="" title="Tests">⚠️</a><a href="#infra-kirito-236" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a> <a href="" title="Code">💻</a> <a href="" title="Backend">⚙️</a></td>
     <!-- <td align="center"><a href="https://sumana.live/"><img src="https://avatars.githubusercontent.com/u/63084088?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Sumana Basu</b></sub></a><br /><a href="#design-sumana2001" title="Design">🎨</a> <a href="https://github.com/Aniket762/playground/commits?author=sumana2001" title="Documentation">📖</a> <a href="https://github.com/Aniket762/playground/commits?author=sumana2001" title="Code">💻</a></td>
   </tr> -->
 </table>
@@ -130,7 +130,7 @@ As we started learning MERN stack it was a perfect opportunity for us to make a 
 - [ ] Heroku
 
 
-## What's next for Playground 🔥
+## What's next for BKC Portal 🔥
 Next, we want to increase the quality of user experience by portal automatically suggesting user the Pod Number according to the time on which he is booking. The admin portal will be updated with a log where admin can see live location of each pod. Other than this, the portal can be made an Application which can be run on mobile so that user can also book a ticket from Mobile application.
 
 <img src='./client/src/assets/img/banner.png' />
