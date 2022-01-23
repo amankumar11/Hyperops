@@ -1,6 +1,6 @@
 <p align='center'><img src='./client/src/assets/img/virginLogo.png' width="150" ></p>
 <h1 href = "https://hyperloop-booking.herokuapp.com/" align='center'> Bandra Kurla Portal</h1>
-<p align="center"> <a href="https://hyperloop-booking.herokuapp.com/" > Click Here To Go The Website !</a> </p>
+<p align="center"> <a target = "blank" href="https://hyperloop-booking.herokuapp.com/" > Click Here To Go The Website !</a> </p>
 
 <p align='center'>
 Virgin Hyperloop is working with the State of Maharashtra to develop a Pune to Mumbai hyperloop which will slash journey times down to 25 minutes, support 150 million passenger trips annually, and create a thriving megaregion. It would be a transformative move as it would create socio-economic benefits upwards of 36 billio USD $. The route will be a catalyst for growth as it would create new job totaling 180 thousand and the best part is, it is Environment friendly as it will reduce annual pollution by 150 thousand.<br/> <br/>
