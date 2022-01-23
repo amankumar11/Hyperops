@@ -5,9 +5,11 @@ import { Container } from 'react-bootstrap';
 import { NavDropdown } from 'react-bootstrap';
 import { useState, useEffect } from 'react';
 import virginlogo from '../assets/img/virginLogo.png';
+import { Redirect } from 'react-router-dom';
 
 const HyperopsNavbar = () => {
 
+    const [redirect,setRedirect] = useState(null);
     const [userName,setUserName] = useState(null);
     const fetchProfile = () =>{
 
@@ -38,6 +40,31 @@ const HyperopsNavbar = () => {
             })
     }
 
+    const logOutHandler = () => {
+        fetch(`http://localhost:5000/users/logout`,{
+            method:"GET",
+            headers: {
+              'Accept': 'application/json',
+              'Content-Type': 'application/json',
+              'Cache': 'no-cache'
+            },
+            credentials: 'include'
+          })
+          .then(async response => {
+              if(response.ok){
+                setRedirect(<Redirect to = "/"></Redirect>)
+               }
+              else{
+                
+                  throw response.json();
+              }
+            })
+            .catch(async (error) => {
+              const errorMessage = await error;
+                console.log(errorMessage);
+            })
+    }
+
     useEffect(( () => {
         fetchProfile();
     }),[])
@@ -45,6 +72,7 @@ const HyperopsNavbar = () => {
 
     return (
         <div>
+            {redirect}
             <Navbar bg="light" expand="lg" fixed="top">
             <Container>
                 <Navbar.Brand href="#home">
@@ -59,9 +87,10 @@ const HyperopsNavbar = () => {
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="me-auto">
-                    <Nav.Link href="#booking">Book</Nav.Link>
-                    <Nav.Link href="#schedule">Schedule</Nav.Link>
-                    <Nav.Link  style = {{transform: "translate(1000%,0px)", fontWeight:"bold"}}  >Hi, {userName}</Nav.Link>
+                    <Nav.Link style={{marginTop:"15px"}} href="#booking">Book</Nav.Link>
+                    <Nav.Link style={{marginTop:"15px"}} href="#schedule">Schedule</Nav.Link>
+                    <Nav.Link  style = {{marginTop:"15px",transform: "translate(330%,0px)", fontWeight:"bold"}}  >Hi, {userName}</Nav.Link>
+                    <Nav.Link  style = {{transform: "translate(530%,0px)"}} > <button style={{color:"white",borderRadius:"25px", backgroundColor:"#742CDC",padding:"10px",width:"100px", borderColor:"#742CDC"}} onClick={() => logOutHandler()} >Log Out </button> </Nav.Link>.
                 </Nav>
                 
                 </Navbar.Collapse>

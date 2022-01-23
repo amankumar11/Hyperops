@@ -88,5 +88,16 @@ router.post("/login/localUser", (req, res, next) => {
         res.send(req.user);
     });
 
+    router.get('/users/logout', isAuth, async (req,res) => {
+      try{
+        req.logout();
+        res.status(200).send("Logout Successful")
+      }
+      catch(e)
+      {
+        res.status(400).send(e);
+      }
+     
+    })
 
 module.exports = router

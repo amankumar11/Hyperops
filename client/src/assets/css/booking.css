@@ -131,10 +131,11 @@
 
 }
 
-/* .note{
-    font-weight: 100;
+.note{
+    margin-top: 30px;
+    /* font-weight: 150; */
     color: red;
-} */
+}
 
 /* Tooltip*/
 .tooltiptext {
