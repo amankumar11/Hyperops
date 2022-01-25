@@ -1,7 +1,6 @@
 <p align='center'><img src='./client/src/assets/img/virginLogo.png' width="150" ></p>
 <h1 href = "https://hyperloop-booking.herokuapp.com/" align='center'> Bandra Kurla Portal</h1>
 <p align="center"> <a target = "blank" href="https://hyperloop-booking.herokuapp.com/" > Click Here To Go The Website !</a> </p>
-[Abstract](https://drive.google.com/file/d/1PyJhAWIonpMfqu3w2_we4PpdflNn0m-f/view?usp=sharing)
 
 [Abstract](https://drive.google.com/file/d/1PyJhAWIonpMfqu3w2_we4PpdflNn0m-f/view?usp=sharing) | [Buisness Usecase](https://drive.google.com/file/d/1EdEz_vg2_M3R7Vdw0KbhK238UFHOXMXd/view?usp=sharing) | [Video]() | [Presentation]() | [Pod Management](https://docs.google.com/spreadsheets/d/1A_P6xKZdIawmSd4zODfIMahDnlwAUfUI/edit?usp=sharing&ouid=101607307626438172474&rtpof=true&sd=true)
 <p align='center'>
