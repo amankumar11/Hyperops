@@ -11,7 +11,7 @@ const ScheduleTable = (props) => {
     return (
         <div>
         <div className='table'>
-            <embed src={mpPDF} id="mp"></embed>
+            <object data={mpPDF} id="mp"></object>
             <embed src={pmPDF} id="pm"></embed>
             {/* <Table striped bordered hover id="mp">
                 <thead>
